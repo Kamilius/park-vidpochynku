@@ -1,0 +1,64 @@
+@import "../../../style/_colors";
+@import "../../../style/_variables";
+
+:host {
+  background-color: $header-bg-color;
+  box-shadow: inset  0 -1px 0 $header-border-color;
+  display: grid;
+  height: 65px;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top-nav {
+  align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-nav__item {
+  align-items: center;
+  color: $top-nav-link-color;
+  display: flex;
+  text-transform: capitalize;
+  position: relative;
+  white-space: nowrap;
+
+  &:hover {
+    & > .top-nav__submenu {
+      display: flex;
+    }
+  }
+}
+
+.top-nav__link,
+.top-nav__sub-link {
+  color: $top-nav-link-color;
+}
+
+.top-nav__submenu {
+  background-color: $nav-submenu-bg-color;
+  // display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: -$top-submenu-padding;
+  padding: $top-submenu-padding 20px $top-submenu-padding $top-submenu-padding;
+  position: absolute;
+  top: 100%;
+}
+
+.top-nav__sub-item {
+  white-space: nowrap;
+}
+
